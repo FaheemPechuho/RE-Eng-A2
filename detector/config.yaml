@@ -1,0 +1,31 @@
+# Code Smell Detector Configuration
+# Enable or disable specific code smell detectors
+
+detectors:
+  LongMethod:
+    enabled: true
+    threshold: 30  # Number of lines for a method to be considered long
+  
+  GodClass:
+    enabled: true
+    method_threshold: 10  # Number of methods for a class to be considered a God Class
+    line_threshold: 150  # Number of lines for a class to be considered a God Class
+  
+  DuplicatedCode:
+    enabled: true
+    min_lines: 5  # Minimum number of lines to consider as duplication
+    similarity_threshold: 0.85  # Similarity ratio (0-1) for code to be considered duplicate
+  
+  LargeParameterList:
+    enabled: true
+    threshold: 5  # Number of parameters to trigger this smell
+  
+  MagicNumbers:
+    enabled: true
+    allowed_numbers: [0, 1, -1, 2]  # Numbers that are typically acceptable
+  
+  FeatureEnvy:
+    enabled: true
+    external_call_ratio: 0.6  # Ratio of external calls to total calls to trigger
+    min_external_calls: 3  # Minimum external calls to consider
+
